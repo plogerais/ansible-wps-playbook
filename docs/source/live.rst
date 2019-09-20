@@ -26,7 +26,7 @@ Running your playbook
 
 .. code-block:: console
 
-    $ ansible-playbook --ask-sudo-pass -i myhost.cfg playbook.yml
+    $ ansible-playbook -K -i myhost.cfg playbook.yml
 
-The ``--ask-sudo-pass`` option instructs Ansible to ask for your user password when it uses sudo for provisioning.
-It's not required if the remote user has password-less sudo rights.
+The ``-K`` option instructs Ansible to ask for your user password when it uses sudo for provisioning.
+It's not required if the remote user has password-less sudo rights, or if the user has root access via ssh on the remote machine.
